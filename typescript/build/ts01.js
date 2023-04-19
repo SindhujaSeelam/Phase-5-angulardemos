@@ -1,0 +1,11 @@
+"use strict";
+let firstname = "Kylan";
+console.log(firstname);
+let lastname = "carlos";
+console.log(lastname);
+console.log(typeof lastname);
+let x;
+x = "Hello";
+console.log(x);
+x = 1;
+console.log(x);

@@ -1,0 +1,28 @@
+<!-- <p>server works!</p>
+<p>Server with id {{ serverid}} is {{serverstatus}}</p>
+<p>Current status is {{ getserverstatus()}}</p> -->
+
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <input class="form-control" type="text"
+            id="servername"
+            placeholder="Server name"
+            (input)="onUpdateServerName($event)"
+            >
+        </div>
+        <div class="col">
+            <input class="form-control" type="text"
+            id="serverdescription"
+            placeholder="Server description"
+            [(ngModel)]="serverdescription"
+            >
+        </div>
+        <div class="col">
+<button class="btn btn-info" [disabled]="serverstatus=='offline'">{{servername}} </button>
+<small class="form-text ">{{serverdescription}}</small></div>
+<div class="col">
+<button class="btn btn-info" (click)="onclick()" >{{getbutton()}} </button></div>
+</div>
+</div>
