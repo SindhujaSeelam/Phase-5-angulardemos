@@ -1,0 +1,132 @@
+{
+  "Quiz": [
+    {
+      "question": " Which is the heavier metal of these two",
+      "id": 1,
+      "options": [
+        "Gold",
+        "Silver"
+      ],
+      "answer": 1,
+      "selected": 0,
+      "ishidden": false
+    },
+    {
+      "question": " Which is the biggest continent in the world",
+      "id": 2,
+      "options": [
+        "North America",
+        "Asia",
+        "Africa",
+        "Australia"
+      ],
+      "answer": 2,
+      "selected": 0,
+      "ishidden": true
+    },
+    {
+      "question": "Entomology is the science that studies",
+      "id": 3,
+      "options": [
+        "Behavior of human beings",
+        "Insects",
+        " The origin and history of technical and scientific terms",
+        " The formation of rocks"
+      ],
+      "answer": 2,
+      "selected": 0,
+      "ishidden": true
+    },
+    {
+      "question": "For which of the following disciplines is Nobel Prize awarded?",
+      "id": 4,
+      "options": [
+        "Physics and Chemistry",
+        "Physiology or Medicine",
+        "Literature, Peace and Economics",
+        "All of the above"
+      ],
+      "answer": 4,
+      "selected": 0,
+      "ishidden": true
+    },
+    {
+      "question": "Which is largest island in the world?",
+      "id": 5,
+      "options": [
+        "New Guinea",
+        "Andaman Nicobar",
+        "Greenland",
+        "Hawaii"
+      ],
+      "answer": 3,
+      "selected": 0,
+      "ishidden": true
+    },
+    {
+      "question": " Which is largest flower in the world?",
+      "id": 6,
+      "options": [
+        "Rafflesia",
+        "Jasmine",
+        "Balloon Flower",
+        "Camellia"
+      ],
+      "answer": 1,
+      "selected": 0,
+      "ishidden": true
+    },
+    {
+      "question": " Tsunami is a word in which language ?",
+      "id": 7,
+      "options": [
+        "Hindi",
+        "Urdu",
+        "Japanese",
+        "French"
+      ],
+      "answer": 3,
+      "selected": 0,
+      "ishidden": true
+    },
+    {
+      "question": " Which is largest desert in the world ?",
+      "id": 8,
+      "options": [
+        "KALAHARI",
+        "GOBI",
+        "TAKLAMAKAN",
+        "SAHARA"
+      ],
+      "answer": 4,
+      "selected": 0,
+      "ishidden": true
+    },
+    {
+      "question": " Who was India’s first Deputy Prime Minister?",
+      "id": 9,
+      "options": [
+        "Morarji Desai",
+        "Vallabhbhai Patel",
+        "Devi Lal",
+        "FrCharan Singhench"
+      ],
+      "answer": 2,
+      "selected": 0,
+      "ishidden": true
+    },
+    {
+      "question": "  Which is hottest continent on Earth",
+      "id": 10,
+      "options": [
+        "Africa",
+        "USouth Asia",
+        "North America",
+        "Australia"
+      ],
+      "answer": 1,
+      "selected": 0,
+      "ishidden": true
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+
+<app-welcome *ngIf="welcome"></app-welcome>
+
+
+<div class="center" *ngIf="!getscore && !welcome">
+<br><br>
+<br><app-singleq  *ngFor="let singleq of quizlist,let i=index" [length]="quizlist.length" [singleq]="singleq" [index]="index">
+   </app-singleq>
+  </div>
+  
+
+  <app-score *ngIf="getscore && !welcome"></app-score>

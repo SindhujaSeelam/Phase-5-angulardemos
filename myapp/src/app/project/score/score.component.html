@@ -1,0 +1,38 @@
+
+<div class="center">
+    <div class="row">
+        <div class="col">
+    <h3  class="green-color"align-self: center>Test completed successfullly!!!</h3>
+<h4>Your Total Score : {{score}}/{{totallist.length}}</h4><br><br>
+</div>
+</div>
+  </div>
+<div class="container" *ngFor="let x of totallist,let i=index" >
+    <div class="row">
+        <div class="col">
+
+            <div class="blue-color">
+           {{i+1}} {{x.question}}<br><br>
+           </div>
+
+           </div>
+           </div>
+           <div class="row">
+            <div class="col">
+           <p *ngFor="let y of x.options,let i=index">
+           {{i+1}} {{y}}
+        </p>
+        <p *ngIf="x.selected==0" class="teal-color">
+           Your answer : Not selected  <span class="material-icons red-color">X</span></p><br>
+        <p *ngIf="x.selected>0" class="teal-color">
+            Your answer : {{x.selected}}  
+            <span *ngIf="x.selected==x.answer" class="material-icons green-color">check </span>
+            <span *ngIf="x.selected!=x.answer" class="material-icons red-color">X</span>
+        </p>
+        <p  class="teal-color"> 
+           Correct answer {{x.answer}}<br><br></p>
+        </div>
+    </div>
+</div>
+
+    

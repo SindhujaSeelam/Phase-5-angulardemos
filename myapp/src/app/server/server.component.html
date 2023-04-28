@@ -20,8 +20,27 @@
             >
         </div>
         <div class="col">
-<button class="btn btn-info" [disabled]="serverstatus=='offline'">{{servername}} </button>
-<small class="form-text ">{{serverdescription}}</small></div>
+<button 
+[ngClass]="getserverClass()"
+[disabled]="serverstatus=='offline'">
+{{servername}} 
+</button>
+<small class="form-text ">{{serverdescription}}</small>
+</div>
+<div class="col" *ngIf="serverstatus=='online';else offline">
+    <button 
+    class="btn btn-info" 
+    [ngStyle]="{backgroundColor: getservercolor()}"
+    >
+    Cpu 50% Memory 40%</button>
+    </div>
+    <ng-template #offline>
+    <div class="col" >
+        <button  
+        [ngStyle]="{backgroundColor: getservercolor()}"
+        class="btn btn-info" >Server is Not Running</button>
+        </div>
+        </ng-template>
 <div class="col">
 <button class="btn btn-info" (click)="onclick()" >{{getbutton()}} </button></div>
 </div>

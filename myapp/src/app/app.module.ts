@@ -1,4 +1,5 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
@@ -7,17 +8,65 @@ import { SuccessAlertComponent } from './success-alert/success-alert.component';
 import { WarningalertComponent } from './warning-alert/warning-alert.component';
 import { ServerComponent } from './server/server.component';
 import { FormsModule } from '@angular/forms';
+import { NamesComponent } from './names/names.component';
+import { ClicklogsComponent } from './clicklogs/clicklogs.component';
+import { AddproductComponent } from './products/addproduct/addproduct.component';
+import { ProductComponent } from './products/product/product.component';
+import { LifecycledemoComponent } from './lifecycledemo/lifecycledemo.component';
+import { BasicHighlightDirective } from './CustomDirectives/BasicHighlightDirective';
+import { BetterHighlightDirectivesDirective } from './CustomDirectives/better-highlight-directives.directive';
+import { AccountsComponent } from './accounts/accounts.component';
+import { NewaccountComponent } from './accounts/newaccount/newaccount.component';
+import { AccountComponent } from './accounts/account/account.component';
+import { HomeComponent } from './home/home.component';
+import { Route, RouterModule, Routes } from '@angular/router';
+import { ObservabledemosComponent } from './observabledemos/observabledemos.component';
+import { BlogpostsComponent } from './blogposts/blogposts.component';
+import { BlogpostComponent } from './blogposts/blogpost/blogpost.component';
+import { ProjectComponent } from './project/project.component';
+import { SingleqComponent } from './project/singleq/singleq.component';
+import { ScoreComponent } from './project/score/score.component';
+import { WelcomeComponent } from './project/welcome/welcome.component';
 
+const approutes:Routes=[
+  {path :'home', component:HomeComponent},
+  {path:'server',component:ServerComponent},
+  {path:'warningalert',component:WarningalertComponent},
+  {path:'names',component:NamesComponent},
+  {path:'products',component:ProductsComponent},
+  {path:'observe',component:ObservabledemosComponent},
+  {path:'score',component:ScoreComponent}
+];
 @NgModule({
   declarations: [
     AppComponent,
     ProductsComponent,
     WarningalertComponent,
     SuccessAlertComponent,
-    ServerComponent
+    ServerComponent,
+    NamesComponent,
+    ClicklogsComponent,
+    AddproductComponent,
+    ProductComponent,
+    LifecycledemoComponent,
+    BasicHighlightDirective,
+    BetterHighlightDirectivesDirective,
+    AccountsComponent,
+    NewaccountComponent,
+    AccountComponent,
+    HomeComponent,
+    ObservabledemosComponent,
+    BlogpostsComponent,
+    BlogpostComponent,
+    ProjectComponent,
+    SingleqComponent,
+    ScoreComponent,
+    WelcomeComponent,
+    
   ],
   imports: [
-    BrowserModule,FormsModule
+    BrowserModule,FormsModule,RouterModule.forRoot(approutes),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

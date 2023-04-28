@@ -1,0 +1,32 @@
+<div class="conntainer  border w-25">
+    <div class="row p-2">
+        <div class="col">
+
+            <h5>{{account.name}}</h5>
+            <p>{{account.status}}</p>
+        </div>
+        <div class="col">
+            <div class="btn-group">
+                <button class="btn btn-outline-primary btn-sm"
+                (click)="changeStatus('Active')"
+                >
+                    Active
+                </button>
+                <button class="btn btn-outline-primary btn-sm"
+                (click)="changeStatus('Inactive')"
+                >
+                    Inactive
+                </button><button class="btn btn-outline-primary btn-sm"
+                (click)="changeStatus('Hidden')"
+                >
+                    Hidden
+                </button>
+        <button class="btn btn-outline-warning btn-sm"
+            (click)="ondelete()"
+            >
+                Delete
+            </button>
+            </div>
+        </div>
+    </div>
+</div>

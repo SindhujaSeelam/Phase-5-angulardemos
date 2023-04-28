@@ -1,0 +1,16 @@
+<button class="btn btn-info" (click)="toggleshowsecret()">
+Server
+</button>
+<button class="btn btn-sm btn-warning" (click)="resetlogs()">
+    Reset
+    </button>
+<label *ngIf="showsecret" appBetterHighlightDirectives [leavecolor]="'green'" [centercolor]="'black'">
+    This is biggest secret
+</label>
+<p
+*ngFor="let log of logs;let i = index"
+[ngStyle]="{ backgroundColor: i > 4 ? 'dodgerblue' : ''}"
+[ngClass]="{ 'white-text': i > 4 }"
+>
+{{log}}
+</p>

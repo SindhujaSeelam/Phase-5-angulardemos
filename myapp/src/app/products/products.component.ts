@@ -12,4 +12,14 @@ export class ProductsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  products=[];
+  onAddproduct(productdata :{
+    ProductName:String
+    ProductDescription:String
+    ProductQuantity:number
+    ProductCost:number
+  }){
+    this.products.push(productdata)
+
+  }
 }

@@ -1,3 +1,10 @@
-<p>products works!</p>
-<div class="container w-25 border">Hi</div>
-<div class="container w-25 border">Hi</div>
+<app-addproduct (productadded)="onAddproduct($event)"></app-addproduct>
+
+<div class="row">
+    <div class="col-xs-12">
+<app-product 
+*ngFor="let oneproduct of products"
+[product]="oneproduct"
+></app-product>
+</div>
+</div>

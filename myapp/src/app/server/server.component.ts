@@ -38,4 +38,10 @@ return "on"
 onUpdateServerName(event:any){
 this.servername=event.target.value;
 }
+getservercolor(){
+  return this.serverstatus=='online'?'green':'red';
+}
+getserverClass(){
+  return this.serverstatus=='online'?'btn-success':'btn-danger';
+}
 }

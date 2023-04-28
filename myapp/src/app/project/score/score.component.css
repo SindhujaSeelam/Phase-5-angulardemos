@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+.center {
+    display: flex;
+    justify-content: center;
+  }
+
+.blue-color {
+    color:blue;
+}
+ 
+.green-color {
+    color:green;
+}
+ 
+.teal-color {
+    color:teal;
+}
+ 
+.yellow-color {
+color:yellow;
+}
+
+.red-color {
+    color:red;
+}
