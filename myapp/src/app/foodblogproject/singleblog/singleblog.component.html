@@ -1,0 +1,42 @@
+<!-- <li class="list-group-item" *ngIf="!update">
+    <h3>{{post.title}}</h3>
+    <p>{{post.content}}</p>    
+    <span>
+        <button class="btn btn-danger btn-sm"(click)=ondelete()>
+            Delete
+        </button>
+    </span>
+    <span>
+        <button class="btn btn-warning btn-sm"(click)=updateopen()>
+            update
+        </button>
+    </span>
+</li> -->
+
+<div class="container" style="width:100%">
+    <div class="row">
+        <ul>
+        <div class="col"><app-update *ngIf="update" [post]="post"></app-update></div>
+        </ul>
+    </div>
+</div>
+
+
+
+
+<div class="card"  *ngIf="!update" style="border:none">
+    <div class="bg-image hover-overlay" mdbRipple rippleColor="light">
+      <img src="{{post.image}}" class="img-fluid" style="width: 100%;"/>
+      <a href="#!">
+        <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+      </a>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">{{post.title}}</h5>
+      <p class="card-text">{{post.content}}</p>
+      <div class="end">
+      <button class="btn btn-primary m-3" (click)=updateopen()>Update</button>
+      <button class="btn btn-warning" (click)=ondelete()>Delete</button>
+      </div>
+    </div>
+  </div>

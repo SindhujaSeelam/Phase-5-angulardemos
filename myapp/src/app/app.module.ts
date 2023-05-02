@@ -27,6 +27,11 @@ import { ProjectComponent } from './project/project.component';
 import { SingleqComponent } from './project/singleq/singleq.component';
 import { ScoreComponent } from './project/score/score.component';
 import { WelcomeComponent } from './project/welcome/welcome.component';
+import { UpdateComponent } from './foodblogproject/singleblog/update/update.component';
+import { FoodblogprojectComponent } from './foodblogproject/foodblogproject.component';
+import { SingleblogComponent } from './foodblogproject/singleblog/singleblog.component';
+// import { FoodblogprojectComponent } from './foodblogproject/foodblogproject.component';
+
 
 const approutes:Routes=[
   {path :'home', component:HomeComponent},
@@ -35,7 +40,8 @@ const approutes:Routes=[
   {path:'names',component:NamesComponent},
   {path:'products',component:ProductsComponent},
   {path:'observe',component:ObservabledemosComponent},
-  {path:'score',component:ScoreComponent}
+  {path:'score',component:ScoreComponent},
+  {path:'blogposts',component:BlogpostsComponent}
 ];
 @NgModule({
   declarations: [
@@ -62,6 +68,10 @@ const approutes:Routes=[
     SingleqComponent,
     ScoreComponent,
     WelcomeComponent,
+    UpdateComponent,
+    FoodblogprojectComponent,
+    SingleblogComponent,
+    // FoodblogprojectComponent,
     
   ],
   imports: [

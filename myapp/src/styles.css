@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+.topnav h1.active {
+    background-color: #04AA6D;
+    color: white;
+  }
+  
+  .topnav-centered h1 {
+    float: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  #h6 {
+    float: right;
+    right:0%;
+    left:50%;
+  }
+
+  
+

@@ -10,6 +10,7 @@ import { BlogpostsComponent } from '../blogposts.component';
 })
 export class BlogpostComponent implements OnInit {
 
+  update=false
   @Input()
   post:postdata
   constructor(private blogpostservice:BlogpostsservicesService,private blogposts:BlogpostsComponent) { }
@@ -25,5 +26,8 @@ export class BlogpostComponent implements OnInit {
     .subscribe(()=>{
       this.blogposts.onfetchposts()
     })
+  }
+  onupdate(){
+    this.update=true
   }
 }

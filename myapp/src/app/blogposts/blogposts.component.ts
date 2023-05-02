@@ -16,6 +16,7 @@ export class BlogpostsComponent implements OnInit {
   dbposts:postdata[]=[]
   isFetching=false
   errorMessage=null
+  update=false
   constructor(private blogservice:BlogpostsservicesService) { }
 
   ngOnInit(): void {

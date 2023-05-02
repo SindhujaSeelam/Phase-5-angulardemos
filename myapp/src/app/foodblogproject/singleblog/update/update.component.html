@@ -1,0 +1,47 @@
+<p>update </p>
+<div class="container" m-4 style="width:400px">
+    <div class="row">
+        <div class="col">
+<form #f="ngForm">
+    <div class="form-group">
+        <label for="title">Title</label>
+<input type="text" 
+placeholder="{{post.title}}" 
+[(ngModel)]="post.title"
+id="title"name="title"
+ngModel required>
+</div>
+
+<div class="form-group">
+    <label for="content">Content</label>
+
+<textarea 
+placeholder="{{post.content}}" 
+name="content"
+[(ngModel)]="post.content"
+ngModel required></textarea>
+</div>
+
+
+<div class="form-group">
+    <label for="title">Image</label>
+<input type="text" 
+placeholder="place image address"
+id="image"name="image"
+[(ngModel)]="post.image"
+ngModel>
+</div>
+
+
+<button class="btn btn-primary"
+type="submit"
+[disabled]="!f.valid"
+(click)="updatepost(f.value,f)">
+    Update Post
+</button>
+</form>
+</div>
+</div>
+</div>
+
+

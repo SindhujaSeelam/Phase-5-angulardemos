@@ -1,0 +1,11 @@
+.center {
+    margin:0 auto;
+    display:block;
+    left: 50%;
+    float: none;
+    top: 50%;
+    transform: translate(12%, -50%);
+
+
+  }
+
