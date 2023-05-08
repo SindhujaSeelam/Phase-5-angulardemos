@@ -1,0 +1,26 @@
+  <h1>Thank You {{newuserdata.firstname}} for booking.. </h1>
+  <div class="container"style="left: 50%;">
+      <div class="container">
+    <div class="card" style="width: 40rem;">
+      <img src="{{purchaseditem.img}}" class="card-img-top" alt="..." style="size:10px;">
+      <div class="card-body">
+        <h2 class="card-title" style="color: green;">Order Booked Successfully</h2>
+        <div class="card-text">
+           <h3> <b>Your order details are :</b></h3>
+            <br>
+          <h4><b> Product :</b></h4> <p style="font-size:xx-large;">{{purchaseditem.name}}{{purchaseditem.category}}</p>
+            <br>
+          <h4><b>Price :</b></h4> <p style="font-size:xx-large;">{{purchaseditem.price}}</p>
+          <br>
+          <h4><b>Weight :</b></h4> <p style="font-size:xx-large;">{{purchaseditem.weight}}</p>
+          <br>
+      <h3><b>Shipping details are :</b></h3>
+      <br>
+     <h4><b>Phone :</b></h4>  <p style="font-size:xx-large;">{{newuserdata.phone}}</p>
+        <br>
+      <h4><b>Address :</b></h4>  <p style="font-size:xx-large;">{{newuserdata.address}}</p>
+        </div>
+        
+    </div><br><br><br><br>
+    </div>
+    </div>

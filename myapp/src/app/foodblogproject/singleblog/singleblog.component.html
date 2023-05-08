@@ -24,7 +24,7 @@
 
 
 
-<div class="card"  *ngIf="!update" style="border:none">
+<div class="card"  *ngIf="!update">
     <div class="bg-image hover-overlay" mdbRipple rippleColor="light">
       <img src="{{post.image}}" class="img-fluid" style="width: 100%;"/>
       <a href="#!">
@@ -39,4 +39,28 @@
       <button class="btn btn-warning" (click)=ondelete()>Delete</button>
       </div>
     </div>
-  </div>
+  </div><br><br><br>
+
+
+
+
+
+
+<!-- 
+
+  <div class="card" style="width: 18rem;">
+    <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/062.webp" class="card-img-top" alt="Chicago Skyscrapers"/>
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+    <ul class="list-group list-group-light list-group-small">
+      <li class="list-group-item px-4">Cras justo odio</li>
+      <li class="list-group-item px-4">Dapibus ac facilisis in</li>
+      <li class="list-group-item px-4">Vestibulum at eros</li>
+    </ul>
+    <div class="card-body">
+      <a href="#" class="card-link">Card link</a>
+      <a href="#" class="card-link">Another link</a>
+    </div>
+  </div> -->

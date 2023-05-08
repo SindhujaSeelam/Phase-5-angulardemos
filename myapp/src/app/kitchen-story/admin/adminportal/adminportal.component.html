@@ -1,0 +1,160 @@
+<div class="w3-bar w3 w3-yellow" *ngIf="!pwd &&!loginagain">
+      <nav class="navbar navbar-expand-sm bg-yellow navbar-dark w3-large py-sm-5">
+              <div class="topnav-centered">
+               <h1 class="active">Kitchen Story<br> Admin Portal</h1>
+              </div>      
+                        
+      </nav>
+      </div>
+    <div class="vertical-center" *ngIf="!pwd &&!loginagain && !display">
+        <button  class="btn btn-primary btn-lg  m-3" style=" width: 300px; size: 40px;"(click)="openpwd()">Change Password</button>
+        <br><button type="button" class="btn btn-primary btn-lg  m-3" style=" width: 300px; size: 40px;" (click)="ondisplay()">Food Items</button>
+
+        <br><a href="<app-homepage>"><h3>Back</h3></a>
+      </div>
+      
+   
+
+
+<section class="vh-100" style="background-color:ivory;" *ngIf="pwd && !loginagain">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="card shadow-2-strong" style="border-radius: 1rem;">
+            <div class="card-body p-5">
+  
+              <h3 class="mb-5 text-center">Enter new password</h3>
+  
+              <form #f="ngForm">
+              <div class="form-outline mb-4">
+                <input type="text" 
+                name="password"
+                id="typeEmailX-2" class="form-control form-control-lg" ngModel required/>
+                
+              </div>
+
+              <button class="btn btn-primary btn-lg btn-block" 
+              type="submit"
+              [disabled]="!f.valid"
+              (click)="changepwd(f.value)"
+              >Change</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+  <app-admin *ngIf="loginagain"></app-admin>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="center" m-4 style="width:400px"  *ngIf="display && !addform">
+    <br><br><br><br><br><br><br><button class="btn btn-warning btn-lg mx-5" (click)="additem()">
+     Add item
+  </button>
+  <button class="btn btn-warning btn-lg mx-5" (click)="onback()">
+    Back
+</button>
+  </div>
+  <div class="row"  *ngIf="display && !addform" style="display: flex;">
+  <div class="column"*ngFor="let x of itemslist" >
+
+  <div class="card" style="width: 18rem;"  >
+    <img src="{{x.img}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title"> {{x.name}} {{x.category}}</h5>
+      <p class="card-text">Price : {{x.price}}
+        <br>
+        Weight :{{x.weight}}
+      </p>
+      <button class="btn btn-danger btn-lg mx-5"
+      (click)="remove(x.id)">
+        remove
+     </button></div>
+  </div><br><br><br><br>
+  </div>
+  </div>
+  
+  
+
+
+
+
+
+
+
+
+
+  <div class="center" m-4 style="width:400px"  *ngIf="addform">
+    <br><br><button class="btn btn-warning btn-lg mx-5" (click)="onadditemback()">
+        Back
+  </button>
+  </div>
+  <div class="container my-5 py-5" *ngIf="addform">
+    <div class="row d-flex justify-content-center py-5">
+        <div class="col-md-7">
+    <div class="card">
+        <div class="card-body p-4">
+<form #f="ngForm">
+    <div class="row mb-4">
+      <div class="col">
+        <div class="form-outline">
+            <label class="form-label" for="form6Example1">Name</label>
+          <input type="text" name="name" id="form6Example1" class="form-control" size="8" ngModel required/>
+        
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-outline">
+            <label class="form-label" for="form6Example2">Category</label>
+          <input type="text" name="category" id="form6Example2" class="form-control"ngModel required />
+       
+        </div>
+      </div>
+    </div>
+        <div class="form-outline mb-4">
+          <label class="form-label" for="form6Example6">Price</label>
+        <input type="number" name="price" id="form6Example6" class="form-control" ngModel required/>
+       
+      </div>
+  
+    <div class="form-outline mb-4">
+        <label class="form-label" for="form6Example4">Weight</label>
+      <input type="text" name="weight" id="form6Example4" class="form-control" ngModel required />
+      
+    </div>
+
+    <div class="form-outline mb-4">
+      <label class="form-label" for="form6Example4">Image</label>
+    <input type="text" name="img" id="form6Example4" class="form-control" ngModel required />
+    
+  </div>
+
+    <button type="submit" class="btn btn-primary btn-block mb-4"(click)="additemjson(f.value)"
+    [disabled]="!f.valid">Add Item</button>
+  </form>
+</div>
+</div>
+</div>
+</div>
+</div>
+

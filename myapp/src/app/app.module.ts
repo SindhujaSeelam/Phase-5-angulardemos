@@ -30,6 +30,12 @@ import { WelcomeComponent } from './project/welcome/welcome.component';
 import { UpdateComponent } from './foodblogproject/singleblog/update/update.component';
 import { FoodblogprojectComponent } from './foodblogproject/foodblogproject.component';
 import { SingleblogComponent } from './foodblogproject/singleblog/singleblog.component';
+import { KitchenStoryComponent } from './kitchen-story/kitchen-story.component';
+import { PaymentComponent } from './kitchen-story/payment/payment.component';
+import { ConfirmationpageComponent } from './kitchen-story/confirmationpage/confirmationpage.component';
+import { HomepageComponent } from './kitchen-story/homepage/homepage.component';
+import { AdminComponent } from './kitchen-story/admin/admin.component';
+import { AdminportalComponent } from './kitchen-story/admin/adminportal/adminportal.component';
 // import { FoodblogprojectComponent } from './foodblogproject/foodblogproject.component';
 
 
@@ -71,6 +77,14 @@ const approutes:Routes=[
     UpdateComponent,
     FoodblogprojectComponent,
     SingleblogComponent,
+    KitchenStoryComponent,
+    PaymentComponent,
+    ConfirmationpageComponent,
+    HomepageComponent,
+    AdminComponent,
+    AdminportalComponent,
+    
+    
     // FoodblogprojectComponent,
     
   ],

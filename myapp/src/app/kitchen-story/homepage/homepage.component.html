@@ -1,0 +1,25 @@
+<div class="home" *ngIf="home">
+  <div class="w3-bar w3 w3-yellow">
+    <nav class="navbar navbar-expand-sm bg-yellow navbar-dark w3-large py-sm-5">
+            <div class="topnav-centered">
+             <h1 class="active">Kitchen Story</h1>
+            </div>      
+                      
+    </nav>
+    </div>
+    <h6>Developed By<br>Seelam Sindhuja<br>Emp Id:10840</h6>
+<br><br><br><img 
+style=" width: 500px;position:center; margin-left: auto; margin-right: auto;display: block;" 
+src="https://media.istockphoto.com/id/1320617333/photo/shopping-cart-full-of-food-isolated-on-white-grocery-and-food-store-concept.jpg?b=1&s=170667a&w=0&k=20&c=R99lGco7R13270Hr0qfzZ-u28ZIzV0ENhHDuERjsTec=">
+<br><br><br>
+</div>
+
+<div class="container" *ngIf="home">
+    <div class="vertical-center">
+        <button  class="btn btn-primary btn-lg  m-3"(click)="onshop()" style="size:18px;">Shop Items</button>
+        <button type="button" class="btn btn-primary btn-lg  m-3" (click)="onadmin()">Admin login</button>
+
+      </div>
+</div>
+<app-kitchen-story *ngIf="shoppage"></app-kitchen-story>
+<app-admin *ngIf="admin"></app-admin>

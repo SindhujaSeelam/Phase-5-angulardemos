@@ -1,0 +1,110 @@
+<div class="home">
+<div class="w3-bar w3 w3-yellow">
+  <nav class="navbar navbar-expand-sm bg-yellow navbar-dark w3-large py-sm-5">
+          <div class="topnav-centered">
+           <h1 class="active">Kitchen Story</h1>
+          </div>      
+                    
+  </nav>
+  </div>
+  <h6>Developed By<br>Seelam Sindhuja<br>Emp Id:10840</h6>
+  </div>
+
+<br><br><div class="container" *ngIf="searchbar">
+    <select #search class="form-select" aria-label="Default select example">
+        <option selected>Open this select menu to search items</option>
+        <option value="{{i}}" *ngFor="let i of category">{{i}}</option>
+  </select>
+  <br><br>
+  <div class="center" m-4 style="width:400px">
+    <button class="btn btn-warning btn-lg mx-5" (click)="displayselecteditems(search.value)">
+     search
+  </button>
+  </div>
+</div>
+
+
+
+<ng-container *ngIf="display" style="display: flex; left: 0%;">
+  <div  *ngFor="let x of itemslist">
+  <div class="column" *ngIf="x.category==selectcat">
+<div class="card" style="width: 18rem;">
+  <img src="{{x.img}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"> {{x.name}} {{selectcat}}</h5>
+    <p class="card-text">Price : {{x.price}}
+      <br>
+      Weight :{{x.weight}}
+    </p>
+    <button class="btn btn-warning btn-lg mx-5" (click)="takedetails(x)">
+      buy
+   </button></div>
+</div><br><br><br><br>
+</div>
+</div>
+</ng-container>
+
+
+
+  
+
+<app-payment *ngIf="payment"></app-payment>
+<app-confirmationpage *ngIf="confirmation"
+[newuserdata]="newuserdata"
+[purchaseditem]="purchaseditem" ></app-confirmationpage>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container my-5 py-5" *ngIf="takedetailsvar">
+    <div class="row d-flex justify-content-center py-5">
+        <div class="col-md-7">
+    <div class="card">
+        <div class="card-body p-4">
+<form #f="ngForm">
+    <div class="row mb-4">
+      <div class="col">
+        <div class="form-outline">
+            <label class="form-label" for="form6Example1">First name</label>
+          <input type="text" name="firstname" id="form6Example1" class="form-control" size="8" ngModel required/>
+        
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-outline">
+            <label class="form-label" for="form6Example2">Last name</label>
+          <input type="text" name="lastname" id="form6Example2" class="form-control"ngModel required />
+       
+        </div>
+      </div>
+    </div>
+    <div class="form-outline mb-4">
+        <label class="form-label" for="form6Example6">Phone</label>
+      <input type="number" name="phone" id="form6Example6" class="form-control" ngModel required/>
+     
+    </div>
+  
+    <div class="form-outline mb-4">
+        <label class="form-label" for="form6Example7">Address</label>
+      <textarea class="form-control" name="address" id="form6Example7" rows="4" ngModel required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary btn-block mb-4"(click)="displaypayment(f.value)"
+    [disabled]="!f.valid">Place order</button>
+  </form>
+</div>
+</div>
+</div>
+</div>
+</div>

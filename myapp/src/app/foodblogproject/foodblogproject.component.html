@@ -39,7 +39,9 @@
                 (click)="create(f.value,f)">
                     Create blog
                 </button>
-                <button class="btn btn-warning m-3" mx-2 (click)="onfetchposts()">
+                <button class="btn btn-warning m-3" mx-2 
+                [disabled]="!checkblog"
+                (click)="onfetchposts()">
                     Check  blog
                 </button>
                 <!-- <button class="btn btn-danger" mx-2 (click)="ondeleteposts()">

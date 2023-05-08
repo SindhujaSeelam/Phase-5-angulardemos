@@ -7,7 +7,13 @@
       "image": "https://cdn.pixabay.com/photo/2017/12/09/08/18/pizza-3007395__480.jpg"
     },
     {
-      "title": "Salad",
+      "title": "Pasta",
+      "content": "Pasta is a type of food made from a mixture of flour, eggs, and water that is formed into different shapes and then boiled.",
+      "image": "https://images.unsplash.com/photo-1555949258-eb67b1ef0ceb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fHBhc3RhfGVufDB8fDB8fA%3D%3D&w=1000&q=80",
+      "id": 14
+    },
+    {
+      "title": "Salad.",
       "content": "A salad is a dish consisting of mixed, mostly natural ingredients. They are typically served chilled or at room temperature, though some can be served warm.",
       "image": "https://images7.alphacoders.com/300/thumb-1920-300220.jpg",
       "id": 12
@@ -19,10 +25,58 @@
       "id": 13
     },
     {
-      "title": "Pasta",
-      "content": "Pasta is a type of food made from a mixture of flour, eggs, and water that is formed into different shapes and then boiled.",
-      "image": "https://images.unsplash.com/photo-1555949258-eb67b1ef0ceb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fHBhc3RhfGVufDB8fDB8fA%3D%3D&w=1000&q=80",
-      "id": 14
+      "title": "Sandwich Cookies",
+      "content": "A sandwich cookie, also known as a sandwich biscuit, is a type of cookie made from two thin cookies or medium cookies with a filling between them. Many types of fillings are used, such as cream, ganache, buttercream, chocolate, cream cheese, jam, peanut butter, lemon curd, or ice cream. ",
+      "image": "https://hips.hearstapps.com/delish/assets/16/25/1466452319-delish-ice-cream-sandwich-cookies.jpg",
+      "id": 15
+    },
+    {
+      "title": "Flourless Chocolate Almond Cake",
+      "content": "Unlike regular cakes made of flour, flourless chocolate cake is not fluffy nor light. It tastes like a rich chocolate truffle. It's silky, rich, and smooth.",
+      "image": "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2015/4/9/0/KC0510H_Flourless-Chocolate-Almond-Cake_s4x3.jpg.rend.hgtvcom.616.462.suffix/1449693307400.jpeg",
+      "id": 16
+    },
+    {
+      "title": "Strawberry Lemonade Bars",
+      "content": "Strawberry Lemonade Bars combine fresh, fruity strawberries, zesty lemonade, and a buttery shortbread crust to create a sweet, simple spring or summer dessert!",
+      "image": "https://images.ctfassets.net/7t85a6f8wt2m/106iPPKxlp4Yn9V4fMXit5/3f8c879a57186f7d13df19bddb5f777d/Strawberry_Lemonade_Bars_image?fm=webp&q=75",
+      "id": 17
+    },
+    {
+      "title": "French Onion Soup",
+      "content": "French onion soup is traditionally made with yellow onions. Also, French onion soup is always made with beef stock while onion soup uses any type of stock or broth.",
+      "image": "https://www.cookingclassy.com/wp-content/uploads/2022/02/french-onion-soup-28.jpg",
+      "id": 18
+    },
+    {
+      "title": "Strawberry Water",
+      "content": "This delicious flavored water has the essence of that red berry and it is refreshing!",
+      "image": "https://www.acouplecooks.com/wp-content/uploads/2021/06/Strawberry-Water-005-735x919.jpg",
+      "id": 19
+    },
+    {
+      "title": "Air Fryer Roasted Potatoes",
+      "content": "Turn to your air fryer for this impossibly crispy and easy side dish.\n\n",
+      "image": "https://cdn.apartmenttherapy.info/image/upload/f_auto,q_auto:eco,c_fill,g_center,w_730,h_913/k%2FPhoto%2FRecipe%20Ramp%20Up%2F2022-02-Air-Fryer-Roasted-Potatoes%2FIMG_6850",
+      "id": 20
+    },
+    {
+      "title": "Caprese Salad Bites Appetizer Recipe",
+      "content": "Easy caprese salad bites on a toothpick drizzled with a rosemary balsamic dressing.",
+      "image": "https://www.homemadefoodjunkie.com/wp-content/uploads/2016/05/Caprese-Salad-Bites-party-tray-720x405.jpg",
+      "id": 21
+    },
+    {
+      "title": "French Fries",
+      "content": "These crazy delicious, crispy french fries are as easy as they are impressive!",
+      "image": "https://images.themodernproper.com/billowy-turkey/production/posts/2022/Homemade-French-Fries_8.jpg?w=960&h=960&q=82&fm=jpg&fit=crop&dm=1662474181&s=f6b09b96f732330eca2aae43140b3ffa",
+      "id": 22
+    },
+    {
+      "title": "Momo",
+      "content": "Momo is a type of Tibetan-Nepalese steamed filled dumpling. It is popular in Bhutan, Nepal and Tibet. In Nepal, where it is considered a national dish, they are usually served with a sauce known as achar influenced by the spices and herbs used within many South Asian cuisines.",
+      "image": "https://www.foodieist.com/wp-content/uploads/2020/12/veg-momos-recipe-672x372.jpg",
+      "id": 23
     }
   ]
 }

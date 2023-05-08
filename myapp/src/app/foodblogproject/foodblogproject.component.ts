@@ -17,6 +17,7 @@ export class FoodblogprojectComponent implements OnInit {
   errorMessage=null
   createform=false
   home=true
+  checkblog=false
   constructor(private foodservice:FoodblogService) { }
 
   ngOnInit(): void {
@@ -31,6 +32,7 @@ export class FoodblogprojectComponent implements OnInit {
    .subscribe((response)=>{
     console.log(response)
     form.reset()
+    this.checkblog=true
     
    })
 
