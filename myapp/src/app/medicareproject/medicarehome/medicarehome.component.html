@@ -1,0 +1,33 @@
+<div class="home" *ngIf="home">
+    <div class="w3-bar w3 w3-teal">
+      <nav class="navbar navbar-expand-sm bg-yellow navbar-dark w3-large py-sm-5">
+              <div class="topnav-centered">
+               <h1 class="active">Medicare</h1>
+              </div>      
+                        
+      </nav>
+      </div>
+      <h6>Developed By<br>Seelam Sindhuja<br>Emp Id:10840</h6>
+  <br><br><br><img 
+  style=" width: 500px;position:center; margin-left: auto; margin-right: auto;display: block;" 
+  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSR4BUNl5uXXXSJN1001SxxoltPsSJ1EDH7Kg&usqp=CAU">
+  <br><br><br>
+  </div>
+
+  <div class="container" *ngIf="home">
+    <div class="vertical-center">
+        <button  class="btn btn-outline-info btn-lg  m-3" (click)="onbuypage()" style="size:18px;">Buy Medicines</button>
+        <button type="button" class="btn btn-outline-info btn-lg  m-3" (click)="onadminpage()">Admin login</button>
+
+      </div>
+</div>
+
+<app-medicareproject *ngIf="buypage"></app-medicareproject>
+<app-medicareadmin *ngIf="adminpage"></app-medicareadmin>
+
+
+
+
+
+
+

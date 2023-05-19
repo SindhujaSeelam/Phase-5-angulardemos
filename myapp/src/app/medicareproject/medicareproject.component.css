@@ -1,0 +1,49 @@
+.center {
+    margin:0 auto;
+    display:block;
+    left: 50%;
+    float: none;
+    top: 50%;
+    transform: translate(12%, -50%);
+
+
+  }
+
+
+  .column{
+    float: left;
+    width:25%;
+    padding: 0 10px;
+  }
+
+  .row{
+    margin :0 -5px;
+  }
+
+  .row:after{
+    content: "";
+    clear: both;
+  }
+
+  @media screen and (max-width:600px) {
+    .column{
+      width: 100%;
+      display: block;
+      margin-bottom: 20px;
+    }
+    
+  }
+
+
+  .card{
+    padding: 16px;
+  }
+
+  .con{
+    margin: 0;
+    position: absolute;
+    top: 15%;
+    right:0%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }

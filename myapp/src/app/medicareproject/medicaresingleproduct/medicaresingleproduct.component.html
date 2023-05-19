@@ -1,0 +1,27 @@
+<ng-container  style="display: flex; left: 0%;">
+
+  <div>
+    <div class="column">
+<div class="card" style="width: 18rem;">
+    <img src="{{x.img}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title"> {{x.name}}</h5>
+      <p class="card-text">Price : {{x.price}}
+        <br>
+        
+      </p>
+      <button class="btn btn-outline-warning btn-lg mx-5" (click)="onpayment()">
+        buy
+     </button>
+     <button class="btn btn-outline-warning btn-lg mx-5" (click)="addcart(x)">
+      add to cart
+   </button></div>
+  </div><br><br><br><br>
+    </div>
+  </div>  
+  </ng-container>
+
+
+
+
+  

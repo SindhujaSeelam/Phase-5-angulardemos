@@ -36,8 +36,16 @@ import { ConfirmationpageComponent } from './kitchen-story/confirmationpage/conf
 import { HomepageComponent } from './kitchen-story/homepage/homepage.component';
 import { AdminComponent } from './kitchen-story/admin/admin.component';
 import { AdminportalComponent } from './kitchen-story/admin/adminportal/adminportal.component';
+import { MedicareprojectComponent } from './medicareproject/medicareproject.component';
+import { MedicarehomeComponent } from './medicareproject/medicarehome/medicarehome.component';
+import { MedicareadminComponent } from './medicareproject/medicareadmin/medicareadmin.component';
 // import { FoodblogprojectComponent } from './foodblogproject/foodblogproject.component';
-
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { MedicaresingleproductComponent } from './medicareproject/medicaresingleproduct/medicaresingleproduct.component';
+import { MedicarepaymentComponent } from './medicareproject/medicarepayment/medicarepayment.component';
+import { MedicareconfirmationpageComponent } from './medicareproject/medicareconfirmationpage/medicareconfirmationpage.component';
+import { MedicareadminportalComponent } from './medicareproject/medicareadmin/medicareadminportal/medicareadminportal.component';
+import { CartComponent } from './medicareproject/cart/cart.component';
 
 const approutes:Routes=[
   {path :'home', component:HomeComponent},
@@ -47,7 +55,9 @@ const approutes:Routes=[
   {path:'products',component:ProductsComponent},
   {path:'observe',component:ObservabledemosComponent},
   {path:'score',component:ScoreComponent},
-  {path:'blogposts',component:BlogpostsComponent}
+  {path:'blogposts',component:BlogpostsComponent},
+  {path:'search',component:Ng2SearchPipeModule},
+  {path:'cart',component:CartComponent}
 ];
 @NgModule({
   declarations: [
@@ -83,14 +93,21 @@ const approutes:Routes=[
     HomepageComponent,
     AdminComponent,
     AdminportalComponent,
-    
+    MedicareprojectComponent,
+    MedicarehomeComponent,
+    MedicareadminComponent,
+    MedicaresingleproductComponent,
+    MedicarepaymentComponent,
+    MedicareconfirmationpageComponent,
+    MedicareadminportalComponent,
+    CartComponent,
     
     // FoodblogprojectComponent,
     
   ],
   imports: [
     BrowserModule,FormsModule,RouterModule.forRoot(approutes),
-    HttpClientModule
+    HttpClientModule,Ng2SearchPipeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
