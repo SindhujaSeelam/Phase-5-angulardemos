@@ -31,7 +31,7 @@ export class CartComponent implements OnInit {
 
     this.x= this.cartservice.items
     for(const i in this.x){
-      this.totalamount= this.totalamount+this.x[i].price
+      this.totalamount= this.totalamount+parseInt(this.x[i].sale)
 
     }
     console.log(this.totalamount)

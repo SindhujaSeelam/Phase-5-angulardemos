@@ -1,32 +1,86 @@
-<div *ngIf="!payment">
+<h3 *ngIf="!payment" style="left: 50%; display: block;">Your cart 🛒</h3>
+<!-- <div *ngIf="!payment">
 <ng-container  style="display: flex; left: 0%;" *ngFor="let single of x,let i=index">
     <div *ngIf="single">
       <div class="column">
   <div class="card" style="width: 18rem;">
-      <img src="" class="card-img-top" alt="...">
+      <img src="{{single.img}}" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title"> {{single.name}}</h5>
-        <p class="card-text">Price : {{single.price}}
-          {{single.id}}
+        <p class="card-text">
+          Quantity :{{single.quantity}}
           <br>
-          
+          Price : {{single.sale}}
+         
         </p>
-        <button class="btn btn-outline-green btn-lg mx-5" (click)="addone(single)">
+        <button class="btn btn-outline-success m-2" (click)="addone(single)">
           Add one more
        </button>
-       <button class="btn btn-outline-warning btn-lg mx-5"(click)="delete(i)">
+       <button class="btn btn-outline-danger"(click)="delete(i)">
         Delete 
      </button>
     </div>
     </div><br><br><br><br>
       </div>
     </div>  
-    </ng-container>
+    </ng-container> -->
 
-    <h3>Toal amount {{totalamount}}</h3>
-    <button class="btn btn-warning btn-lg mx-5"(click)="onpayment()">
+    <table *ngIf="!payment" style="width: 80rem;
+    height: 8rem;">
+      <tr>
+      <th>
+        <h1 style="color: blue;">Name</h1>
+      </th>
+      <th>
+        <h1 style="color: blue;">Quantity</h1>
+      </th>
+      <th>
+        <h1 style="color: blue;">Price</h1>
+      </th>
+      <th>
+        <h1 style="color: blue;">Add</h1>
+      </th>
+      <th>
+      <h1 style="color: blue;">Delete</h1>
+      </th>
+      </tr>
+      <tr *ngFor="let single of x,let i=index">
+        <td *ngIf="single">
+          <h1 >{{single.name}}</h1>
+          
+        </td>
+        <td *ngIf="single">
+          <h1>{{single.quantity}}</h1>
+          
+        </td>
+        <td *ngIf="single">
+          <h1>{{single.sale}}</h1>
+          
+        </td>
+        <td *ngIf="single">
+          <button class="btn btn-outline-success m-2" (click)="addone(single)">
+            Add one more
+         </button>
+        </td>
+        <td *ngIf="single">
+          <button class="btn btn-outline-danger"(click)="delete(i)">
+            Delete 
+         </button>
+        </td>
+      </tr>
+    </table>
+    
+
+    <div *ngIf="!payment">
+    <h3  style="color: green;"><br><br>Total amount {{totalamount}}</h3>
+    <br><br><button class="btn btn-warning btn-lg mx-5"(click)="onpayment()">
       Checkout 
    </button>
 </div>
+
+
+
+
+
 
    <app-medicarepayment *ngIf="payment"></app-medicarepayment>

@@ -63,32 +63,43 @@
   </div>
 </section>
 
-<br><br><br> <div class="container" *ngIf="!payment && !login && !takedetailsvar && !cartvar">
+
+<!-- <div class="row" style="width: 120px;" *ngIf="!payment && !login && !takedetailsvar && !cartvar">
     <div class="search">
-        <input type="text" class="search" name="searcht" 
+        <input type="text" class="search"  size="50" name="searcht" placeholder="Search"
         [(ngModel)]="searcht">
     </div>
-    <div class="col content">
+    <br><br><br>
+    <div class="check" >
         <app-medicaresingleproduct *ngFor="let i of medicinesdata | filter :searcht" [x]="i"></app-medicaresingleproduct>
     </div>
+  </div> -->
+  
+  <div *ngIf="!payment && !login && !takedetailsvar && !cartvar">
+    <br><br><br> <br><br><br><br><br><br>
+    <div class="search">
+      <input type="text" class="search"  size="50" name="searcht" placeholder="Search"
+        [(ngModel)]="searcht">
+    </div>
+    <div>
+    <app-medicaresingleproduct *ngFor="let i of medicinesdata | filter :searcht" [x]="i"></app-medicaresingleproduct>
+    </div>
   </div>
-
+  
   <br><br><br><br><br>
   <div class="con"*ngIf="!payment && !login && !takedetailsvar && !cartvar">
     <div class="row">
         <div class="col">
             
-            <button class="btn btn-primary" (click)="oncart()" >
-              Cart
+            <button class="btn btn-outline-primary btn-lg" (click)="oncart()" style="size:0cqmax;" >
+              Cart 🛒
             </button>
         </div>
     </div>
   </div> 
   <app-cart *ngIf="cartvar"></app-cart>
   
-<!-- <div *ngIf="!payment"><app-medicaresingleproduct *ngFor="let i of medicinesdata" [x]="i"></app-medicaresingleproduct></div>
 
-<app-medicarepayment *ngIf="payment"></app-medicarepayment> -->
 
 <div class="container my-5 py-5" *ngIf="takedetailsvar">
   <div class="row d-flex justify-content-center py-5">

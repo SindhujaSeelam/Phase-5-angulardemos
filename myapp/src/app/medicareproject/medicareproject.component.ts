@@ -15,7 +15,7 @@ export class MedicareprojectComponent implements OnInit {
   searcht:any
   image=true
   payment=false
-  login=false
+  login=true
   invalid=false
   takedetailsvar=false
   cartvar=false
@@ -27,7 +27,6 @@ export class MedicareprojectComponent implements OnInit {
   constructor(private service:MedicareService,private cart:MedicarecartService) { }
 
   ngOnInit(): void {
-    console.log("Default")
     this.getmedicines()
     this.getusers()
   }
@@ -36,13 +35,12 @@ export class MedicareprojectComponent implements OnInit {
 
   onchecklogin(logindata:{email:string,password:string})
   {
-    console.log(logindata)
     
     for(const i in this.userdata){
       if(this.userdata[i].email==logindata.email && this.userdata[i].password==logindata.password)
       {
         this.login=false
-        this.service.userid=this.userdata[i].id
+        this.service.userinfo=this.userdata[i]
         this.cart.id=this.userdata[i].id
       }
       else{
@@ -81,6 +79,7 @@ export class MedicareprojectComponent implements OnInit {
     this.service.reguser(registerdata)
     .subscribe(()=>{
       this.getusers()
+      this.invalid=false
     })
 
   }

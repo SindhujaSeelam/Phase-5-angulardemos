@@ -1,4 +1,4 @@
-<div class="home">
+<div class="home" *ngIf=" checkstatus==0">
     <div class="w3-bar w3 w3-teal">
       <nav class="navbar navbar-expand-sm bg-yellow navbar-dark w3-large py-sm-5">
               <div class="topnav-centered">
@@ -8,6 +8,8 @@
       </nav>
       </div>
 </div>
+
+<app-medicareadminportal *ngIf="portal"></app-medicareadminportal>
 
 
 <section class="vh-100"  *ngIf=" checkstatus==0">
@@ -51,4 +53,3 @@
         </div>
       </section>
     
-      <app-adminportal *ngIf="checkstatus==1"></app-adminportal>

@@ -1,11 +1,11 @@
 export interface medicinesdataformat{
-    name:string,
-    category:string,
-    price:number,
-    used:string,
     id?:string,
+    name:string,
+    mrp:string,
+    sale:string,
+    disamt:string,
+    disper:string,
     img?:string,
-    expirydate:Date,
     quantity:number,
     status:string
 }

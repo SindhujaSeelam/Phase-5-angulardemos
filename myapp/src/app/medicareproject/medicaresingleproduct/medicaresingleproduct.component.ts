@@ -11,7 +11,7 @@ import { medicinesdataformat } from '../data.model';
 export class MedicaresingleproductComponent implements OnInit {
 
   @Input()
-  x
+  x;
 
   id
 

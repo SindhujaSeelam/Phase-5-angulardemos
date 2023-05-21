@@ -44,8 +44,8 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { MedicaresingleproductComponent } from './medicareproject/medicaresingleproduct/medicaresingleproduct.component';
 import { MedicarepaymentComponent } from './medicareproject/medicarepayment/medicarepayment.component';
 import { MedicareconfirmationpageComponent } from './medicareproject/medicareconfirmationpage/medicareconfirmationpage.component';
-import { MedicareadminportalComponent } from './medicareproject/medicareadmin/medicareadminportal/medicareadminportal.component';
 import { CartComponent } from './medicareproject/cart/cart.component';
+import { MedicareadminportalComponent } from './medicareproject/medicareadmin/medicareadminportal/medicareadminportal.component';
 
 const approutes:Routes=[
   {path :'home', component:HomeComponent},
@@ -99,8 +99,8 @@ const approutes:Routes=[
     MedicaresingleproductComponent,
     MedicarepaymentComponent,
     MedicareconfirmationpageComponent,
-    MedicareadminportalComponent,
     CartComponent,
+    MedicareadminportalComponent,
     
     // FoodblogprojectComponent,
     

@@ -1,0 +1,66 @@
+#sectio{
+    left: 50%;
+}
+
+.container{
+    left:0
+}
+
+.center {
+    margin:0 auto;
+    display:block;
+    left: 50%;
+    float: none;
+    top:30%;
+    right: 50%;
+    transform: translate(12%, -50%);
+
+
+  }
+
+  .vertical-center {
+    margin: 0;
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+
+  .column{
+    float: left;
+    width:25%;
+    padding: 0 10px;
+  }
+
+  .row{
+    margin :0 -5px;
+  }
+
+  .row:after{
+    content: "";
+    clear: both;
+  }
+
+  @media screen and (max-width:600px) {
+    .column{
+      width: 100%;
+      display: block;
+      margin-bottom: 20px;
+    }
+    
+  }
+
+
+  .card{
+    padding: 16px;
+  }
+
+
+
+
+  .a{
+    text-decoration: none;
+    size: 8px;
+    width: 20px;
+  }

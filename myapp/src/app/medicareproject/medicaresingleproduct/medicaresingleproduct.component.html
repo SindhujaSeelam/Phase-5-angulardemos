@@ -1,27 +1,28 @@
-<ng-container  style="display: flex; left: 0%;">
-
-  <div>
-    <div class="column">
-<div class="card" style="width: 18rem;">
-    <img src="{{x.img}}" class="card-img-top" alt="...">
+<div class="column" *ngIf="x.status=='true'">
+  
+<div class="card" style="width: 20rem;">
+    <img src="{{x.img}}" style="height: 200px; width: 200px;" alt="...">
     <div class="card-body">
-      <h5 class="card-title"> {{x.name}}</h5>
-      <p class="card-text">Price : {{x.price}}
-        <br>
+      <p style="height: 100px; width: 150px; font-size:larger;"> <b>{{x.name}}</b></p>
+      <p class="card-text">
         
+        <b>Price :</b> {{x.sale}}
+        <br>
+       <b>Mrp :</b>{{x.mrp}}
+        <br>
+        <b>Save : </b>{{x.discamt}}
+        <br>
+        <b>Discount :</b>{{x.disper}}%
       </p>
-      <button class="btn btn-outline-warning btn-lg mx-5" (click)="onpayment()">
-        buy
-     </button>
-     <button class="btn btn-outline-warning btn-lg mx-5" (click)="addcart(x)">
+     <button class="btn btn-outline-warning  mx-5" (click)="addcart(x)">
       add to cart
    </button></div>
   </div><br><br><br><br>
     </div>
-  </div>  
-  </ng-container>
 
 
 
 
-  
+
+    
+      

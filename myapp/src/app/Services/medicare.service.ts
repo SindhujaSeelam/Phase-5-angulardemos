@@ -1,8 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import{map} from 'rxjs/operators';
-import { usersdata } from '../medicareproject/data.model';
-import { userdata } from '../kitchen-story/data.model';
+import { medicinesdataformat, usersdata } from '../medicareproject/data.model';
 
 @Injectable({
   providedIn: 'root'
@@ -12,10 +11,17 @@ export class MedicareService {
   url='http://localhost:8080/medicines'
   usersurl='http://localhost:8080/users'
   userreg='http://localhost:8080/registeruser'
-  userid
+  meddelurl='http://localhost:8080/deletemedicine/'
+  medchangestatusurl='http://localhost:8080/changemedstatus/'
+  editmed='http://localhost:8080/editmedicines'
+  addmedurl='http://localhost:8080/addmedicine'
+  userinfo:usersdata
+  medicines:medicinesdataformat[]=[]
 
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient) {
+    
+   }
 
   getmedicines(){
     return this.http.get(this.url)
@@ -42,26 +48,35 @@ return    this.http.get(this.usersurl)
     
   }
 
- 
+  deletemedicine(id:number){
 
+    return this.http.get(this.meddelurl+id)
+    
+
+  }
+
+  changestatus(id:number)
+  {
+    return this.http.get(this.medchangestatusurl+id)
+
+  }
+
+ editmedicines(data)
+ {
+
+ return this.http.post(this.editmed,data)
+
+
+ }
+
+ addmed(data)
+ {
+
+  return this.http.post(this.addmedurl,data)
+ }
 
   
 
-  // post(){
-  //  const body={
-  //     "category":"formals",
-  //     "price":2900,
-  //     "brandname":"Nick",
-  //     "color":"white",
-  //     "materialtype":"leather"
-  // }
-  //   this.http.post(this.hiurl,body)
-  //   .subscribe(()=>{
-  //   })
-  // }
-
-  // delete(){
-  //   this.http.delete(this.deleteurl)
-  // }
+  
 }
 

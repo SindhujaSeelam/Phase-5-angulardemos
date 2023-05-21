@@ -1,4 +1,3 @@
-<p>medicareadminportal works!</p>
 <div class="home">
     <div class="w3-bar w3 w3-teal">
       <nav class="navbar navbar-expand-sm bg-yellow navbar-dark w3-large py-sm-5">
@@ -10,34 +9,128 @@
       </div>
 </div>
 
-
-<div class="center" m-4 style="width:400px"  *ngIf="display && !addform">
-  <br><br><br><br><br><br><br><button class="btn btn-warning btn-lg mx-5">
-   Add item
-</button>
-<button class="btn btn-warning btn-lg mx-5" (click)="onback()">
-  Back
-</button>
-</div>
-<div class="row"  *ngIf="display && !addform" style="display: flex;">
-<div class="column"*ngFor="let x of medicinesdata" >
-
-<div class="card" style="width: 18rem;"  >
-  <img src="{{x.img}}" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title"> {{x.name}} {{x.category}}</h5>
-    <p class="card-text">Price : {{x.price}}
-      <br>
-
-    </p>
-    <button class="btn btn-danger btn-lg mx-5"
-    >
-      remove
-   </button></div>
-</div><br><br><br><br>
-</div>
+<div class="center" *ngIf="!update && !addform" m-4 style="width:400px">
+    <br><br><br><br><br><br><br>
+    <button class="btn btn-warning btn-lg mx-5" (click)="onaddform()">
+     Add item
+  </button>
+  <a href="<app-medicareadmin></app-medicareadmin>" style="font-size:19px;"><button class="btn btn-warning btn-lg mx-5">
+    Back
+  </button></a>
 </div>
 
+  <div class="row"  *ngIf="display && !addform && !update" style="display: flex;">
+    <div class="column"*ngFor="let x of medicinesdata" >
+  
+    <div class="card" style="width: 20rem;"  >
+      <img src="{{x.img}}"   style="height: 200px; width: 200px;" alt="...">
+      <div class="card-body">
+        <p style="height: 100px; width: 150px; font-size:larger;"> <b>{{x.name}}</b></p>        
+        <p class="card-text">
+          <b>Price : </b>{{x.sale}}
+          <br>
+          </p>
+          <p *ngIf="x.status=='true'"><b>Status : </b>Available</p>
+          <p *ngIf="x.status=='false'"><b>Status :</b> Unavailable</p>
+         <b> Make:</b>
+        <button *ngIf="x.status=='true'" class="btn btn-outline-warning m-1 "
+        (click)="changemedstatus(x.id)">
+          Unavailable
+       </button>
+       <button *ngIf="x.status=='false'" class="btn btn-outline-success m-1"
+        (click)="changemedstatus(x.id)">
+          Available
+       </button>
+       <button  class="btn btn-primary m-2 "
+       (click)="edit(x)">
+       Edit
+      </button>
+       <button  class="btn btn-danger "
+       (click)="remove(x.id)">
+         remove
+      </button>
+    </div>
+    </div><br><br><br><br>
+    </div>
+    </div>
+
+  
+
+
+
+
+
+
+
+
+    <div *ngIf="addform" class="center" m-4 style="width:400px">
+      <br><br><br><br><br><br><button class="btn btn-warning btn-lg mx-5 " (click)="addform=false">
+          Back
+    </button>
+    </div>
+    <div *ngIf="addform" class="container my-5 py-5">
+      <div class="row d-flex justify-content-center py-5">
+          <div class="col-md-7">
+      <div class="card">
+          <div class="card-body p-4">
+    <form #f="ngForm">
+      <div class="row mb-4">
+        <div class="col">
+          <div class="form-outline">
+              <label class="form-label" for="form6Example1">Name</label>
+            <input type="text" name="name" class="form-control" size="8" ngModel required/>
+          
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-outline">
+              <label class="form-label" for="form6Example2">Mrp</label>
+            <input type="text" name="mrp" id="form6Example2" class="form-control"ngModel required />
+         
+          </div>
+        </div>
+      </div>
+          <div class="form-outline mb-4">
+            <label class="form-label" for="form6Example6">Sale Price</label>
+          <input type="text" name="sale"  id="form6Example6" class="form-control" ngModel required/>
+         
+        </div>
+    
+      <div class="form-outline mb-4">
+          <label class="form-label" for="form6Example4">Discount Amount</label>
+        <input type="text" name="discamt"  id="form6Example4" class="form-control" ngModel required />
+        
+      </div>
+  <div class="form-outline mb-4">
+        <label class="form-label" for="form6Example4">Discount Percentage</label>
+      <input type="text" name="disper" id="form6Example4"  class="form-control" ngModel required />
+      
+    </div>
+    <div class="form-outline mb-4">
+        <label class="form-label" for="form6Example4">Image</label>
+      <input type="text" name="img" id="form6Example4"  class="form-control" ngModel required />
+      
+    </div>
+  <div class="form-outline mb-4">
+        <label class="form-label" for="form6Example4">Quantity</label>
+      <input type="number" name="quantity" id="form6Example4"  class="form-control" ngModel required />
+      
+    </div>
+  <div class="form-outline mb-4">
+        <label class="form-label" for="form6Example4">Status</label>
+      <input type="text" placeholder="Enter true/false" name="status" id="form6Example4"  class="form-control" ngModel required />
+      
+    </div>
+    
+      <button type="submit" class="btn btn-primary btn-block mb-4"
+      [disabled]="!f.valid"
+  (click)="add(f.value)">Add </button>
+    </form>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
 
 
 
@@ -48,56 +141,86 @@
 
 
 
-<div class="center" m-4 style="width:400px"  *ngIf="addform">
-  <br><br><button class="btn btn-warning btn-lg mx-5">
-      Back
-</button>
-</div>
-<div class="container my-5 py-5" *ngIf="addform">
-  <div class="row d-flex justify-content-center py-5">
-      <div class="col-md-7">
-  <div class="card">
-      <div class="card-body p-4">
-<form #f="ngForm">
-  <div class="row mb-4">
-    <div class="col">
-      <div class="form-outline">
-          <label class="form-label" for="form6Example1">Name</label>
-        <input type="text" name="name" id="form6Example1" class="form-control" size="8" ngModel required/>
+
+
+
+
+
+  
+  
+  
+  <div *ngIf="update" class="center" m-4 style="width:400px">
+    <br><br><button class="btn btn-warning btn-lg mx-5" (click)="update=false">
+        Back
+  </button>
+  </div>
+  <div *ngIf="update" class="container my-5 py-5">
+    <div class="row d-flex justify-content-center py-5">
+        <div class="col-md-7">
+    <div class="card">
+        <div class="card-body p-4">
+  <form #f="ngForm">
+    <div class="row mb-4">
+      <div class="col">
+        <div class="form-outline">
+        <input type="hidden" name="id" [(ngModel)]="post.id" class="form-control" size="8" ngModel required/>
       
       </div>
-    </div>
-    <div class="col">
-      <div class="form-outline">
-          <label class="form-label" for="form6Example2">Category</label>
-        <input type="text" name="category" id="form6Example2" class="form-control"ngModel required />
-     
+        <div class="form-outline">
+            <label class="form-label" for="form6Example1">Name</label>
+          <input type="text" name="name" [(ngModel)]="post.name" class="form-control" size="8" ngModel required/>
+        
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-outline">
+            <label class="form-label" for="form6Example2">Mrp</label>
+          <input type="text" name="mrp"[(ngModel)]="post.mrp" id="form6Example2" class="form-control"ngModel required />
+       
+        </div>
       </div>
     </div>
-  </div>
-      <div class="form-outline mb-4">
-        <label class="form-label" for="form6Example6">Price</label>
-      <input type="number" name="price" id="form6Example6" class="form-control" ngModel required/>
-     
+        <div class="form-outline mb-4">
+          <label class="form-label" for="form6Example6">Sale Price</label>
+        <input type="number" name="sale" [(ngModel)]="post.sale" id="form6Example6" class="form-control" ngModel required/>
+       
+      </div>
+  
+    <div class="form-outline mb-4">
+        <label class="form-label" for="form6Example4">Discount Amount</label>
+      <input type="text" name="discamt" [(ngModel)]="post.discamt" id="form6Example4" class="form-control" ngModel required />
+      
     </div>
 
-  <div class="form-outline mb-4">
-      <label class="form-label" for="form6Example4">Weight</label>
-    <input type="text" name="weight" id="form6Example4" class="form-control" ngModel required />
+    <div class="form-outline mb-4">
+      <label class="form-label" for="form6Example4">Discount Percentage</label>
+    <input type="text" name="disper" id="form6Example4" [(ngModel)]="post.disper" class="form-control" ngModel required />
+    
+  </div>
+  
+    <div class="form-outline mb-4">
+      <label class="form-label" for="form6Example4">Image</label>
+    <input type="text" name="img" id="form6Example4" [(ngModel)]="post.img" class="form-control" ngModel required />
     
   </div>
 
-  <div class="form-outline mb-4">
-    <label class="form-label" for="form6Example4">Image</label>
-  <input type="text" name="img" id="form6Example4" class="form-control" ngModel required />
+<div class="form-outline mb-4">
+      <label class="form-label" for="form6Example4">Quantity</label>
+    <input type="number" name="quantity" id="form6Example4" [(ngModel)]="post.quantity" class="form-control" ngModel required />
+    
+  </div>
+<div class="form-outline mb-4">
+      <label class="form-label" for="form6Example4">Status</label>
+    <input type="text" name="status" id="form6Example4" [(ngModel)]="post.status" class="form-control" ngModel required />
+    
+  </div>
   
-</div>
-
-  <button type="submit" class="btn btn-primary btn-block mb-4"
-  [disabled]="!f.valid">Add Item</button>
-</form>
-</div>
-</div>
-</div>
-</div>
-</div>
+    <button type="submit" class="btn btn-primary btn-block mb-4"
+    
+(click)="updatepost(f.value)">Update </button>
+  </form>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>

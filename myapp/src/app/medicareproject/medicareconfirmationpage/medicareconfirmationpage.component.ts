@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { medicinesdataformat, usersdata } from '../data.model';
+import { MedicarecartService } from 'src/app/Services/medicarecart.service';
+import { MedicareService } from 'src/app/Services/medicare.service';
 
 @Component({
   selector: 'app-medicareconfirmationpage',
@@ -7,9 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MedicareconfirmationpageComponent implements OnInit {
 
-  constructor() { }
+  list:medicinesdataformat[]=[]
+  newuserdata:usersdata
+ 
+ 
+  constructor(private cartservice:MedicarecartService,private service:MedicareService) { }
+
 
   ngOnInit(): void {
+    this.list= this.cartservice.items
+    this.newuserdata=this.service.userinfo
+    console.log("list from confirm")
+    console.log(this.list)
+
   }
 
 }
