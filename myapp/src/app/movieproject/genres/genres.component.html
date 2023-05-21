@@ -1,0 +1,124 @@
+<div class="center" *ngIf="display && !add &&!update" m-4 style="width:400px">
+    <br><br><br><br><br><br><br>
+    <button class="btn btn-warning btn-lg mx-5" (click)="add=true">
+     Add item
+  </button>
+
+</div>
+
+<table *ngIf="display && !add &&!update" style="width: 80rem;
+    height: 8rem;">
+      <tr>
+      <th>
+        <h1 style="color: blue;">Name</h1>
+      </th>
+      <th>
+        <h1 style="color: blue;">Update</h1>
+      </th>
+      <th>
+      <h1 style="color: blue;">Delete</h1>
+      </th>
+      </tr>
+      <tr *ngFor="let single of x,let i=index">
+        <td *ngIf="single">
+          <h1 >{{single.name}}</h1>
+          
+        </td>
+        <td *ngIf="single">
+          <button class="btn btn-outline-success m-2" (click)="onupdate(single)">
+            Update 
+         </button>
+        </td>
+        <td *ngIf="single">
+          <button class="btn btn-outline-danger"(click)="deletegenre(single.id)">
+            Delete 
+         </button>
+        </td>
+      </tr>
+    </table>
+    
+
+    <div *ngIf="add" class="center" m-4 style="width:400px">
+        <br><br><br><br><br><br><button class="btn btn-warning btn-lg mx-5 " (click)="add=false">
+            Back
+      </button>
+      </div>
+      <div *ngIf="add" class="container my-5 py-5">
+        <div class="row d-flex justify-content-center py-5">
+            <div class="col-md-7">
+        <div class="card">
+            <div class="card-body p-4">
+      <form #f="ngForm">
+        <div class="row mb-4">
+          <div class="col">
+            <div class="form-outline">
+                <label class="form-label" for="form6Example1">Name</label>
+              <input type="text" name="name" class="form-control" size="8" ngModel required/>
+            
+            </div>
+          </div>            
+        
+    
+    
+        </div>
+        <button type="submit" class="btn btn-primary btn-block mb-4"
+        [disabled]="!f.valid"
+    (click)="addoreditgenres(f.value)">Add </button>
+      </form>
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+    
+    <div *ngIf="update" class="center" m-4 style="width:400px">
+      <br><br><button class="btn btn-warning btn-lg mx-5" (click)="update=false">
+          Back
+    </button>
+    </div>
+    <div *ngIf="update" class="container my-5 py-5">
+      <div class="row d-flex justify-content-center py-5">
+          <div class="col-md-7">
+      <div class="card">
+          <div class="card-body p-4">
+    <form #f="ngForm">
+      <div class="row mb-4">
+        <div class="col">
+          <div class="form-outline">
+          <input type="hidden" name="id" [(ngModel)]="post.id" class="form-control" size="8" ngModel required/>
+        
+        </div>
+          <div class="form-outline">
+              <label class="form-label" for="form6Example1">Name</label>
+            <input type="text" name="name" [(ngModel)]="post.name" class="form-control" size="8" ngModel required/>
+          
+          </div>
+     </div>
+     </div>
+          
+      <button type="submit" class="btn btn-primary btn-block mb-4"
+      
+  (click)="addoreditgenres(f.value)">Update </button>
+    </form>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>

@@ -20,8 +20,7 @@ export class MedicareconfirmationpageComponent implements OnInit {
   ngOnInit(): void {
     this.list= this.cartservice.items
     this.newuserdata=this.service.userinfo
-    console.log("list from confirm")
-    console.log(this.list)
+    
 
   }
 

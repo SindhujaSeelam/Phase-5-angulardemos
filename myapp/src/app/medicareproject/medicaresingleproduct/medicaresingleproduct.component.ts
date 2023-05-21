@@ -27,6 +27,7 @@ export class MedicaresingleproductComponent implements OnInit {
   addcart(x:medicinesdataformat){
 
     this.cart.addtocart(x)
+    window.alert("Item added to cart");
 
   }
 

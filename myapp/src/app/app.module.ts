@@ -46,6 +46,15 @@ import { MedicarepaymentComponent } from './medicareproject/medicarepayment/medi
 import { MedicareconfirmationpageComponent } from './medicareproject/medicareconfirmationpage/medicareconfirmationpage.component';
 import { CartComponent } from './medicareproject/cart/cart.component';
 import { MedicareadminportalComponent } from './medicareproject/medicareadmin/medicareadminportal/medicareadminportal.component';
+import { MovieprojectComponent } from './movieproject/movieproject.component';
+import { MovieadminComponent } from './movieproject/movieadmin/movieadmin.component';
+import { MovieadminportalComponent } from './movieproject/movieadmin/movieadminportal/movieadminportal.component';
+import { MoviecartComponent } from './movieproject/moviecart/moviecart.component';
+import { MovieconfirmationpageComponent } from './movieproject/movieconfirmationpage/movieconfirmationpage.component';
+import { MoviehomeComponent } from './movieproject/moviehome/moviehome.component';
+import { MoviepaymentComponent } from './movieproject/moviepayment/moviepayment.component';
+import { MoviesingleproductComponent } from './movieproject/moviesingleproduct/moviesingleproduct.component';
+import { GenresComponent } from './movieproject/genres/genres.component';
 
 const approutes:Routes=[
   {path :'home', component:HomeComponent},
@@ -101,6 +110,15 @@ const approutes:Routes=[
     MedicareconfirmationpageComponent,
     CartComponent,
     MedicareadminportalComponent,
+    MovieprojectComponent,
+    MovieadminComponent,
+    MovieadminportalComponent,
+    MoviecartComponent,
+    MovieconfirmationpageComponent,
+    MoviehomeComponent,
+    MoviepaymentComponent,
+    MoviesingleproductComponent,
+    GenresComponent,
     
     // FoodblogprojectComponent,
     

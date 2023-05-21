@@ -1,0 +1,30 @@
+<div class="column" *ngIf="x.status=='true'">
+  
+    <div class="card" style="width: 20rem; border-color: red;">
+        <img src="{{x.img}}" style="height: 200px; width: 200px;" alt="...">
+        <div class="card-body">
+          <p style="height: 100px; width: 150px; font-size:larger;"> <b>{{x.name}}</b></p>
+          <p class="card-text">
+            
+            <b>Price :</b> {{x.price}} per ticket
+            <br>
+           <b>Language :</b>{{x.language}}
+            <br>
+            <b>Show Date : </b>{{x.showdate}}
+            <br>
+            <b>Time :</b>{{x.time}}
+            <br>
+            <b>Description :</b>{{x.description}}
+          </p>
+         <button class="btn btn-outline-warning  mx-5" (click)="addcart(x)">
+          add to cart
+       </button></div>
+      </div><br><br><br><br>
+        </div>
+    
+    
+    
+    
+    
+        
+          

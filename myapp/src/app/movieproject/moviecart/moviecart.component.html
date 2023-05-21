@@ -6,13 +6,16 @@
         <h1 style="color: blue;">Name</h1>
       </th>
       <th>
-        <h1 style="color: blue;">Quantity</h1>
-      </th>
-      <th>
         <h1 style="color: blue;">Price</h1>
       </th>
       <th>
-        <h1 style="color: blue;">Add</h1>
+        <h1 style="color: blue;">Date</h1>
+      </th>
+      <th>
+        <h1 style="color: blue;">Time</h1>
+      </th>
+      <th>
+        <h1 style="color: blue;">Add one more</h1>
       </th>
       <th>
       <h1 style="color: blue;">Delete</h1>
@@ -23,17 +26,22 @@
           <h1 >{{single.name}}</h1>
           
         </td>
+        
         <td *ngIf="single">
-          <h1>{{single.quantity}}</h1>
+          <h1>{{single.price}}</h1>
           
         </td>
         <td *ngIf="single">
-          <h1>{{single.sale}}</h1>
-          
-        </td>
+            <h1>{{single.showdate}}</h1>
+            
+          </td>
+          <td *ngIf="single">
+            <h1>{{single.time}}</h1>
+            
+          </td>
         <td *ngIf="single">
           <button class="btn btn-outline-success m-2" (click)="addone(single)">
-            Add one more
+            Add 
          </button>
         </td>
         <td *ngIf="single">
@@ -57,4 +65,4 @@
 
 
 
-   <app-medicarepayment *ngIf="payment"></app-medicarepayment>
+   <app-moviepayment *ngIf="payment"></app-moviepayment>

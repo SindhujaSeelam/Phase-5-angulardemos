@@ -16,7 +16,8 @@ export interface usersdata{
     email:string,
     age:number,
     password:string,
-    phone:number
+    phone:number,
+    address:string
 }
 
 

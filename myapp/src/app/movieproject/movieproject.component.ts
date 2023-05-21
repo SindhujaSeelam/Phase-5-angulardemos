@@ -1,16 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { MedicareService } from '../Services/medicare.service';
-import { medicinesdataformat, usersdata } from './data.model';
-import { MedicarecartService } from '../Services/medicarecart.service';
+import { moviedataformat, usersdata } from './data.model';
+import { MovieserviceService } from '../Services/movieservice.service';
 
 @Component({
-  selector: 'app-medicareproject',
-  templateUrl: './medicareproject.component.html',
-  styleUrls: ['./medicareproject.component.css']
+  selector: 'app-movieproject',
+  templateUrl: './movieproject.component.html',
+  styleUrls: ['./movieproject.component.css']
 })
-export class MedicareprojectComponent implements OnInit {
+export class MovieprojectComponent implements OnInit {
 
-  medicinesdata :medicinesdataformat[]=[]
+  medicinesdata :moviedataformat[]=[]
   searcht:any
   image=true
   payment=false
@@ -20,17 +19,12 @@ export class MedicareprojectComponent implements OnInit {
   cartvar=false
 
   userdata :any=[]
-
-  
-
-  constructor(private service:MedicareService,private cart:MedicarecartService) { }
+  constructor(private service:MovieserviceService) { }
 
   ngOnInit(): void {
     this.getmedicines()
     this.getusers()
   }
-
-
 
   onchecklogin(logindata:{email:string,password:string})
   {
@@ -40,7 +34,7 @@ export class MedicareprojectComponent implements OnInit {
       {
         this.login=false
         this.service.userinfo=this.userdata[i]
-        this.cart.id=this.userdata[i].id
+        this.service.id=this.userdata[i].id
       }
       else{
         this.invalid=true
@@ -51,7 +45,7 @@ export class MedicareprojectComponent implements OnInit {
   }
     
   
- 
+  
 
   getmedicines(){
 
@@ -90,6 +84,4 @@ export class MedicareprojectComponent implements OnInit {
     this.cartvar=true
   }
 
-   
- 
 }

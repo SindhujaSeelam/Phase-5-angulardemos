@@ -10,12 +10,10 @@
                     <div class="invoice p-5">
 
                         <h5>{{newuserdata.name}}
-                            <br>Your order Confirmed!✔</h5>
+                            <br>Your Ticket Confirmed!✔</h5>
 
                         <span class="font-weight-bold d-block mt-4">Hello, {{newuserdata.name}}</span>
-                        <span>You order has been confirmed and will be shipped in next two days!</span>               
-                        <span class="font-weight-bold d-block mt-4">Shipping Address </span>
-                        <span>{{newuserdata.address}}</span>
+                        <span>You Ticket has been confirmed! Enjoy the Movie and have fun!!!</span>               
                             <div class="product border-bottom table-responsive">
 
                                 <table class="table table-borderless">
@@ -31,13 +29,13 @@
                                     <td width="60%">
                                         <span class="font-weight-bold">{{i.name}}</span>
                                         <div class="product-qty">
-                                            <span class="d-block">Quantity:{{i.quantity}}</span>
-                                            
+                                            <span class="d-block">Date :{{i.showdate}}</span>
+                                            <span class="d-block">Time :{{i.time}}</span>
                                         </div>
                                     </td>
                                     <td width="20%">
                                         <div class="text-right">
-                                            <span class="font-weight-bold">{{i.sale}}</span>
+                                            <span class="font-weight-bold">{{i.price}}</span>
                                         </div>
                                     </td>
                                     </tr>
@@ -55,8 +53,8 @@
 
 
                            
-                            <p>We will be sending shipping confirmation email to {{newuserdata.email}} when the item shipped successfully!</p>
-                            <p class="font-weight-bold mb-0">Thanks for shopping with us!</p>
+                            <p>We will be sending tickets confirmation email to {{newuserdata.email}}</p>
+                            <p class="font-weight-bold mb-0">Thanks for booking with us!</p>
                       
 
                     </div>                 

@@ -1,0 +1,249 @@
+<div class="home">
+    <div class="w3-bar w3 w3-red">
+      <nav class="navbar navbar-expand-sm bg-yellow navbar-dark w3-large py-sm-5">
+              <div class="topnav-centered">
+               <h1 class="active">Movie Admin Portal</h1>
+              </div>      
+                        
+      </nav>
+      </div>
+</div>
+
+<div class="center" *ngIf="display&&!update && !addform" m-4 style="width:400px">
+    <br><br><br><br><br><br><br>
+    <button class="btn btn-warning btn-lg mx-5" (click)="onaddform()">
+     Add item
+  </button>
+  <a href="<app-movieadmin></app-movieadmin>" style="font-size:19px;"><button class="btn btn-warning btn-lg mx-5">
+    Back
+  </button></a>
+  <br><br>
+<button class="btn btn-warning btn-lg mx-5"(click)="display=false">
+    Genre
+  </button>
+</div>
+
+  <div class="row"  *ngIf="display && !addform && !update" style="display: flex;">
+    <div class="column"*ngFor="let x of medicinesdata" >
+  
+    <div class="card" style="width: 20rem;"  >
+      <img src="{{x.img}}"   style="height: 200px; width: 200px;" alt="...">
+      <div class="card-body">
+        <p style="height: 100px; width: 150px; font-size:larger;"> <b>{{x.name}}</b></p>        
+        <p class="card-text">
+          <b>Price : </b>{{x.price}}
+          <br>
+          <b>Date : </b>{{x.showdate}}
+          <br>
+          <b>Time : </b>{{x.time}}
+          <br>
+          </p>
+          <p *ngIf="x.status=='true'"><b>Status : </b>Available</p>
+          <p *ngIf="x.status=='false'"><b>Status :</b> Unavailable</p>
+         <b> Make:</b>
+        <button *ngIf="x.status=='true'" class="btn btn-outline-warning m-1 "
+        (click)="changemedstatus(x.id)">
+          Unavailable
+       </button>
+       <button *ngIf="x.status=='false'" class="btn btn-outline-success m-1"
+        (click)="changemedstatus(x.id)">
+          Available
+       </button>
+       <button  class="btn btn-primary m-2 "
+       (click)="edit(x)">
+       Edit
+      </button>
+       <button  class="btn btn-danger "
+       (click)="remove(x.id)">
+         remove
+      </button>
+    </div>
+    </div><br><br><br><br>
+    </div>
+    </div>
+
+  
+
+
+
+
+
+
+
+
+    <div *ngIf="addform" class="center" m-4 style="width:400px">
+      <br><br><br><br><br><br><button class="btn btn-warning btn-lg mx-5 " (click)="addform=false">
+          Back
+    </button>
+    </div>
+    <div *ngIf="addform" class="container my-5 py-5">
+      <div class="row d-flex justify-content-center py-5">
+          <div class="col-md-7">
+      <div class="card">
+          <div class="card-body p-4">
+    <form #f="ngForm">
+      <div class="row mb-4">
+        <div class="col">
+          <div class="form-outline">
+              <label class="form-label" for="form6Example1">Name</label>
+            <input type="text" name="name" class="form-control" size="8" ngModel required/>
+          
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-outline">
+              <label class="form-label" for="form6Example2">Price</label>
+            <input type="text" name="price" id="form6Example2" class="form-control"ngModel required />
+         
+          </div>
+        </div>
+      </div>
+          <div class="form-outline mb-4">
+            <label class="form-label" for="form6Example6">Language</label>
+          <input type="text" name="language"  id="form6Example6" class="form-control" ngModel required/>
+         
+        </div>
+    
+      <div class="form-outline mb-4">
+          <label class="form-label" for="form6Example4">Genre </label>
+        <input type="text" name="genre"  id="form6Example4" class="form-control" ngModel required />
+        
+      </div>
+      <div class="form-outline mb-4">
+        <label class="form-label" for="form6Example7">Description</label>
+      <textarea class="form-control" name="description" id="form6Example7" rows="4" ngModel required></textarea>
+    </div>
+    <div class="form-outline mb-4">
+        <label class="form-label" for="form6Example4">Image</label>
+      <input type="text" name="img" id="form6Example4"  class="form-control" ngModel required />
+      
+    </div>
+  <div class="form-outline mb-4">
+        <label class="form-label" for="form6Example4">Date </label>
+      <input type="text" name="showdate" id="form6Example4"  class="form-control" ngModel required />
+      
+    </div>
+    <div class="form-outline mb-4">
+        <label class="form-label" for="form6Example4">Time </label>
+      <input type="text" name="time" id="form6Example4"  class="form-control" ngModel required />
+      
+    </div>
+  <div class="form-outline mb-4">
+        <label class="form-label" for="form6Example4">Status</label>
+      <input type="text" placeholder="Enter true/false" name="status" id="form6Example4"  class="form-control" ngModel required />
+      
+    </div>
+    
+      <button type="submit" class="btn btn-primary btn-block mb-4"
+      [disabled]="!f.valid"
+  (click)="add(f.value)">Add </button>
+    </form>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  <div *ngIf="update" class="center" m-4 style="width:400px">
+    <br><br><button class="btn btn-warning btn-lg mx-5" (click)="update=false">
+        Back
+  </button>
+  </div>
+  <div *ngIf="update" class="container my-5 py-5">
+    <div class="row d-flex justify-content-center py-5">
+        <div class="col-md-7">
+    <div class="card">
+        <div class="card-body p-4">
+  <form #f="ngForm">
+    <div class="row mb-4">
+      <div class="col">
+        <div class="form-outline">
+        <input type="hidden" name="id" [(ngModel)]="post.id" class="form-control" size="8" ngModel required/>
+      
+      </div>
+        <div class="form-outline">
+            <label class="form-label" for="form6Example1">Name</label>
+          <input type="text" name="name" [(ngModel)]="post.name" class="form-control" size="8" ngModel required/>
+        
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-outline">
+            <label class="form-label" for="form6Example2">Price</label>
+          <input type="text" name="price"[(ngModel)]="post.price" id="form6Example2" class="form-control"ngModel required />
+       
+        </div>
+      </div>
+    </div>
+        <div class="form-outline mb-4">
+          <label class="form-label" for="form6Example6">Language</label>
+        <input type="text" name="language" [(ngModel)]="post.language" id="form6Example6" class="form-control" ngModel required/>
+       
+      </div>
+  
+    <div class="form-outline mb-4">
+        <label class="form-label" for="form6Example4">Genre</label>
+      <input type="text" name="genre" [(ngModel)]="post.genre" id="form6Example4" class="form-control" ngModel required />
+      
+    </div>
+
+    <div class="form-outline mb-4">
+        <label class="form-label" for="form6Example7">Description</label>
+      <textarea class="form-control" name="description"[(ngModel)]="post.description" id="form6Example7" rows="4" ngModel required></textarea>
+    </div>
+  
+    <div class="form-outline mb-4">
+      <label class="form-label" for="form6Example4">Image</label>
+    <input type="text" name="img" id="form6Example4" [(ngModel)]="post.img" class="form-control" ngModel required />
+    
+  </div>
+
+<div class="form-outline mb-4">
+      <label class="form-label" for="form6Example4">Date</label>
+    <input type="text" name="showdate" id="form6Example4" [(ngModel)]="post.date" class="form-control" ngModel required />
+    
+  </div>
+  <div class="form-outline mb-4">
+    <label class="form-label" for="form6Example4">Time </label>
+  <input type="text" name="time" id="form6Example4" [(ngModel)]="post.time" class="form-control" ngModel required />
+  
+</div>
+<div class="form-outline mb-4">
+      <label class="form-label" for="form6Example4">Status</label>
+    <input type="text" name="status" id="form6Example4" [(ngModel)]="post.status" class="form-control" ngModel required />
+    
+  </div>
+  
+    <button type="submit" class="btn btn-primary btn-block mb-4"
+    
+(click)="updatepost(f.value)">Update </button>
+  </form>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+
+
+
+
+
+
+  <app-genres *ngIf="!display"></app-genres>
